@@ -1,7 +1,7 @@
 ## Processador de Documentos
 Este projeto tem como objetivo demonstrar, de forma prática, a utilização de polimorfismo e sobrescrita de métodos na Programação Orientada a Objetos (POO), por meio da implementação de um sistema de processamento de documentos.
 
-# - A aplicação simula diferentes tipos de documentos (Texto, HTML e PDF), permitindo que todos sejam tratados de maneira uniforme por meio de uma classe base comum.
+# A aplicação simula diferentes tipos de documentos (Texto, HTML e PDF), permitindo que todos sejam tratados de maneira uniforme por meio de uma classe base comum.
 
 ## Estrutura do Projeto
 # O sistema é composto pelos seguintes elementos:
