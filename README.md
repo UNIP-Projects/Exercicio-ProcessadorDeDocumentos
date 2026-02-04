@@ -1,61 +1,57 @@
-# 📄 Processador de Documentos
+## Processador de Documentos
+# - Este projeto tem como objetivo demonstrar, de forma prática, a utilização de polimorfismo e sobrescrita de métodos na Programação Orientada a Objetos (POO), por meio da implementação de um sistema de processamento de documentos.
 
-## 🧠 Objetivo
+# - A aplicação simula diferentes tipos de documentos (Texto, HTML e PDF), permitindo que todos sejam tratados de maneira uniforme por meio de uma classe base comum.
 
-Este projeto tem como objetivo demonstrar o uso de **polimorfismo** e **sobrescrita de métodos** na programação orientada a objetos por meio da criação de um sistema de processamento de documentos.
+## Estrutura do Projeto
+# O sistema é composto pelos seguintes elementos:
 
-## 🏗️ Estrutura do Projeto
+Classe base: Documento
 
-O sistema é composto por:
+## Responsável por definir as propriedades e comportamentos comuns a todos os tipos de documentos:
 
-### 🔹 Classe base: `Documento`
-Contém propriedades comuns a todos os documentos:
-- `Título`
-- `Autor`
-- `Data de criação`
+Propriedades:
+-  Título
+-  Autor
+-  Data de criação
 
-E métodos virtuais:
-- `Imprimir()`
-- `ConteudoFormatado()`
+Métodos virtuais:
+- Imprimir()
+- ConteudoFormatado()
 
-### 🔸 Classes derivadas
+## Classes derivadas
+# - Cada tipo de documento herda da classe Documento e implementa comportamentos específicos:
 
-Cada tipo de documento implementa um comportamento específico:
+DocumentoTexto
+- Sobrescreve os métodos da classe base
+- Método específico: ContarPalavras()
 
-- **`DocumentoTexto`**
-  - Sobrescreve os métodos da classe base
-  - Método específico: `ContarPalavras()`
+DocumentoHTML
+- Sobrescreve os métodos da classe base
+- Método específico: AdicionarEstilo()
 
-- **`DocumentoHTML`**
-  - Sobrescreve os métodos da classe base
-  - Método específico: `AdicionarEstilo()`
+DocumentoPDF
+- Sobrescreve os métodos da classe base
+- Método específico: AdicionarMarcaDagua()
 
-- **`DocumentoPDF`**
-  - Sobrescreve os métodos da classe base
-  - Método específico: `AdicionarMarcaDagua()`
+Classe ProcessadorDocumentos
+- Responsável por percorrer uma coleção de documentos e invocar o método Imprimir() de forma polimórfica, permitindo que objetos de diferentes tipos sejam tratados de maneira uniforme.
 
-### ⚙️ Classe `ProcessadorDocumentos`
+Funcionalidades
+- Impressão personalizada conforme o tipo de documento
+- Processamento de uma coleção heterogênea de documentos
+- Implementação de métodos específicos em cada classe derivada
 
-Responsável por processar uma lista de documentos e chamar o método `Imprimir()` de forma polimórfica, permitindo que documentos de diferentes tipos sejam tratados uniformemente.
+Uso de Polimorfismo
+O método Imprimir() é chamado a partir de uma referência do tipo Documento, sendo executado de acordo com o tipo concreto do objeto (Texto, HTML ou PDF).
 
-## ✅ Funcionalidades
-
-- Impressão personalizada de cada tipo de documento
-- Processamento de uma coleção de documentos variados
-- Métodos adicionais específicos em cada subtipo
-
-## 💡 Uso de Polimorfismo
-
-O método `Imprimir()` é chamado genericamente em uma lista de objetos do tipo `Documento`, sendo executado de forma diferente conforme o tipo real do objeto (Texto, HTML, PDF).
-
-**Vantagens:**
+Benefícios do uso de polimorfismo:
 - Redução de duplicação de código
-- Código mais flexível e extensível
-- Facilidade para adicionar novos tipos de documentos no futuro
+- Maior flexibilidade e extensibilidade
+- Facilidade para inclusão de novos tipos de documentos
 
-## 🧪 Exemplo de Uso
-
-```csharp
+## Exemplo de Uso
+```
 List<Documento> documentos = new List<Documento>
 {
     new DocumentoTexto("Relatório", "Ana", DateTime.Now),
@@ -65,3 +61,4 @@ List<Documento> documentos = new List<Documento>
 
 ProcessadorDocumentos processador = new ProcessadorDocumentos();
 processador.Processar(documentos);
+```
