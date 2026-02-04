@@ -20,7 +20,7 @@ Métodos virtuais:
 - ConteudoFormatado()
 
 ## Classes derivadas
-# - Cada tipo de documento herda da classe Documento e implementa comportamentos específicos:
+Cada tipo de documento herda da classe Documento e implementa comportamentos específicos:
 
 DocumentoTexto
 - Sobrescreve os métodos da classe base
